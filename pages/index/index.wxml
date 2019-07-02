@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="container">
     <button bindtap="inc">+</button>
-    <text>{{count}}</text>
-    <button bindtap="dec">-</button>
+    <input bindinput='dosearch' type="text" placeholder="你是什么垃圾？" auto-focus></input>
+    <input type="text" placeholder="echo" value="{{value}}"></input>
 </view>
