@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+    <button bindtap="inc">+</button>
+    <text>{{count}}</text>
+    <button bindtap="dec">-</button>
+</view>
