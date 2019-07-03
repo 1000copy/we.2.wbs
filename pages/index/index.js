@@ -1,7 +1,7 @@
-let types = "可回收垃圾 有害垃圾 湿垃圾 干垃圾"
+let typestr = "可回收垃圾 有害垃圾 湿垃圾 干垃圾"
 let garbage = [`
  废纸张 纸板箱 报纸 废弃书本 快递纸袋 打印纸 信封 广告单 纸塑铝复合包装 利乐包 
- 废塑料 食品与日用品塑料瓶罐及瓶盖 饮料瓶 奶瓶 洗发水瓶 乳液罐  食用油桶 塑料碗 盆  塑料盒子 食品保鲜盒 收纳盒  塑料玩具  塑料积木 塑料模型  塑料衣架 施工安全帽 PE塑料 pvc 亚克力板 塑料卡片 密胺餐具 kt板 泡沫 泡沫塑料 水果网套 
+ 废塑料 食品与日用品塑料瓶盖 饮料瓶 奶瓶 洗发水瓶 乳液罐  食用油桶 塑料碗 盆  塑料盒子 食品保鲜盒 收纳盒  塑料玩具  塑料积木 塑料模型  塑料衣架 施工安全帽 PE塑料 pvc 亚克力板 塑料卡片 密胺餐具 kt板 泡沫 泡沫塑料 水果网套 
  废玻璃制品 食品及日用品玻璃瓶罐 调料瓶 酒瓶 化妆品瓶  玻璃杯 窗玻璃 玻璃制品 放大镜 玻璃摆件  碎玻璃 废金属 金属瓶罐 
  易拉罐 食品罐/桶  金属厨具 菜刀 锅  金属工具 刀片 指甲剪 螺丝刀  金属制品 铁钉 铁皮 铝箔 废织物 旧衣服 床单 枕头 棉被
  皮鞋 毛绒玩具 布偶  棉袄 包 皮带 丝绸制品 电路板 主板 内存条 充电宝 电线 插头 木制品 积木 砧板`,
@@ -47,17 +47,43 @@ function toStr(anses){
     s +=  i + anses[i].join(',')
   return s
 }
+function normal(anses) {
+  var a = []
+  var types = typestr.split(' ')
+  for (var i = 0; i < anses.length; i++)
+    if (anses[i].length == 0) continue
+    else{
+      for (var j = 0; j < anses[i].length; j++){
+        var tn = {type:"",name:""}
+        tn.type = types[i]
+        tn.name = anses[i][j]
+        if(a.length < 4)
+          a.push(tn)
+        else{
+          a.push({name:"...",type:"..."})
+          return a
+        }
+      }
+    }
+  return a
+}
 Page({
   data: {
     count:0,
-    value:'none'
+    ans:[{name:"纸张",type:"干垃圾"}]
   },
-  inc: function (e) {
-    this.setData({ count: this.data.count+1})
+  t1: function (e) {
+    wx.navigateTo({
+      url: '../detail/detail?type=1',
+    })
   },
-  dec: function (e) {
-    this.setData({count:this.data.count-1})
+  t2: function (e) { 
+    wx.navigateTo({
+      url: '../detail/detail?type=2',
+    })
   },
+  t3: function (e) { },
+  t4: function (e) { },
   dosearch:function(e){
     var s = e.detail.value
     let anses = []
@@ -65,8 +91,7 @@ Page({
       let ans = search(garbage[i],s)
       anses.push(ans)
     }
-    console.log(anses)
     // this.setData({ value: ans.join(',') })
-    this.setData({ value: toStr(anses)})
+    this.setData({ ans: normal(anses)})
   }
 })

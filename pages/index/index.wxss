@@ -1,5 +1,42 @@
 .container{
+ font-size: 18px;
  display: flex;
- flex-direction: row;
+ flex-direction: column;
  justify-content: flex-start;
+ /* margin: 3px; */
+ color: #ecf0f1;
+ background: #f1c4f0; 
+}
+input{
+  height: 30px;
+  font-size: 27px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 3px;
+  
+  
+}
+.search{
+  background: #34495e;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.row.j{
+  background: #1abc9c;
+}
+.row.o{
+  background: #2ecc71;
+}
+span.name{
+  flex:2 1 ;
+  border-right: 3px solid #3498db;
+}
+span.type{
+  flex:1 1 ;
+}
+.icons{
+  display: flex;
+  flex-direction: row;
 }

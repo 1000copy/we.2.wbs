@@ -1,0 +1,7 @@
+<!--pages/detail/detail.wxml-->
+<text>pages/detail/detail.wxml</text>
+<text>{{detail[type].title}}</text>
+<text>{{detail[type].remark}}</text>
+<text wx:for="{{detail[type].list}}">
+  {{item}}
+</text>

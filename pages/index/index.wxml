@@ -1,6 +1,14 @@
 <!--index.wxml-->
 <view class="container">
-    <button bindtap="inc">+</button>
-    <input bindinput='dosearch' type="text" placeholder="你是什么垃圾？" auto-focus></input>
-    <input type="text" placeholder="echo" value="{{value}}"></input>
+    <input class="search" bindinput='dosearch' type="search" placeholder="什么垃圾？" auto-focus value="罐"/>
+    <view class="row {{index%2==0?'j':'o'}}" wx:for="{{ans}}" wx:key="name">
+        <span class="name ">{{item.name}}</span>
+        <span class="type">{{item.type}}</span>
+    </view>
+    <view class="icons">
+      <image src="../../image/2.png" mode="aspectFit" bindtap='t1'/>
+      <image src="../../image/1.png" mode="aspectFit" bindtap='t2'/>
+      <image src="../../image/3.png" mode="aspectFit" bindtap='t3'/>
+      <image src="../../image/4.png" mode="aspectFit" bindtap='t4'/>
+    </view>
 </view>
