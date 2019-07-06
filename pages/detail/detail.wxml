@@ -1,7 +1,12 @@
-<!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
-<text>{{detail[type].title}}</text>
-<text>{{detail[type].remark}}</text>
-<text wx:for="{{detail[type].list}}">
-  {{item}}
-</text>
+<view>
+  <!-- <text>{{title}}</text> -->
+  <view class="icons">
+      <image src="../../image/{{icon}}.png" mode="aspectFit"/>
+      <text class="remark">{{remark}}</text>
+  </view>
+  <view class="list">
+    <text wx:for="{{list}}">
+      {{item}}
+    </text>
+  </view>
+</view>

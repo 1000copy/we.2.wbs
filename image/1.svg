@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 356.314 356.314" style="enable-background:new 0 0 356.314 356.314;" xml:space="preserve"
+	 width="200">
+	 <style>
+	 	.heavy { font: bold 30px sans-serif; }
+	 	.heavy1 { font: bold 30px SimSun; }
+	 </style>
+<g>
+	<g>
+		<rect style="fill:#3E4A57;"
+			x="10" y="10" width="310" height="310" rx="50" />
+	</g>
+	<g>
+		<polygon style="fill:#8DCD6F;" points="195.753,161.987 171.69,120.309 171.69,120.31 136.71,120.311 136.709,120.31 
+			115.863,156.419 131.551,154.423 137.94,169.661 154.373,141.198 173.721,174.708 162.359,181.268 194.738,185.39 
+			207.358,155.287 		"/>
+		<polygon style="fill:#8DCD6F;" points="103.807,177.315 79.743,218.995 79.746,218.993 97.236,249.286 97.236,249.287 
+			138.929,249.287 129.356,236.699 139.36,223.546 106.493,223.546 125.84,190.036 137.201,196.596 124.581,166.494 92.202,170.615 
+					"/>
+		<polygon style="fill:#8DCD6F;" points="162.956,249.125 211.084,249.125 211.08,249.123 228.57,218.829 228.571,218.829 
+			207.725,182.722 201.609,197.307 185.217,195.22 201.65,223.684 162.956,223.684 162.956,210.563 143.198,236.544 
+			162.957,262.524 		"/>
+	</g>
+	<text x="100" y="80" fill="white" font-size="30"  font-family="SimSun">RECYCLE</text>
+	<text x="80" y="300" fill="white" font-size="30"  font-family="SimSun">可回收垃圾</text>
+</g>
+</svg>

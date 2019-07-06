@@ -5,16 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail:[{title:"可回收",remark:"指的是...",list:['鸡蛋壳',"玉米棒"]}],
-    type:0
+    title:"可回收",
+    remark:"指的是...",
+    list:['鸡蛋壳',"玉米棒"],
+    icon:1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ type: +options.type-1})
-    // console.log(+options.type)
+    var type = +options.type - 1
+    // this.setData({ type: type})
+    this.setData({ icon: getApp().globalData.icons[type] })
+    this.setData({ title: getApp().globalData.typestr.split(' ')[type]})
+    this.setData({ remark: getApp().globalData.remark[type] })
+    this.setData({ list: getApp().globalData.garbage[type].split(' ') })
   },
 
   /**

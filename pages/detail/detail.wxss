@@ -1,1 +1,18 @@
-/* pages/detail/detail.wxss */
+.icons{
+  display: flex;
+  flex-direction: row;
+  border: 3px solid;
+}
+image{
+  width:100px;
+  height: 100px;
+  display: inline-block;
+}
+text.remark{
+  display: inline-block;
+  vertical-align: middle;
+}
+.list{
+  background: blue;
+  padding: 0px;
+}

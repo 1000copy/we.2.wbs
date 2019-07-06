@@ -1,3 +1,10 @@
+
+
+(上海市生活垃圾分类投放指引)[http://lhsr.sh.gov.cn/sites/ShanghaiGreen/dyn/xxgk_content.ashx?ctgId=d9c3641a-2fcd-4610-be8f-dc2bf5d0f8c6&infId=ebd82bda-2525-4f4e-9f75-4fd5878ea4ec&leftBarId=d7c2aa81-db54-4754-ab81-c85fb2b683a1]
+
+
+5c96997f5c6150c61e157a7d2b4422b7 wx60d2bb1f9f2abb5d
+
 # we.1
 
 
@@ -67,3 +74,44 @@ UI看起来是这样的：
 	{
 	  "usingComponents": {}
 	}
+
+
+
+
+## 跨页面的数据分享
+
+定义于 app.js 内的数据
+
+    App({
+      globalData: {
+        userInfo: null
+      }
+    })
+
+
+使用数据页面
+
+    const app = getApp()
+    app.globalData.userInfo // 可读可写
+
+## 数据存储的利用
+
+    // 展示本地存储能力
+    var logs = wx.getStorageSync('logs') || []
+    logs.unshift(Date.now())
+    wx.setStorageSync('logs', logs)
+
+## 传递页面参数
+	
+	wx.navigateTo({
+      url: '../detail/detail?type=3',
+    })
+
+## 接受页面参数
+
+    Page({
+	  onLoad: function (options) {
+		    this.setData({ type: +options.type-1})
+	  },
+	})
+
