@@ -1,12 +1,11 @@
 <view>
   <!-- <text>{{title}}</text> -->
   <view class="icons">
-      <image src="../../image/{{icon}}.png" mode="aspectFit"/>
-      <text class="remark">{{remark}}</text>
+      <text class="remark">{{name}}</text>
   </view>
-  <view class="list">
-    <text wx:for="{{list}}">
-      {{item}}
-    </text>
-  </view>
+  <view class="row {{index%2==0?'j':'o'}}" wx:for="{{list}}" wx:key="name" 
+    bindtap='t' data-id='{{index}}'>
+        <span class="name ">{{item.n}}</span>
+        <span class="remark">{{item.r}}</span>
+    </view>
 </view>

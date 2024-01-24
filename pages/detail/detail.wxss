@@ -16,3 +16,13 @@ text.remark{
   background: blue;
   padding: 0px;
 }
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.row.j{
+  background: #1abc9c;
+}
+.row.o{
+  background: #2ecc71;
+}

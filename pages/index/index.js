@@ -1,4 +1,4 @@
-let garbage = getApp().globalData.garbage
+let garbage = getApp().globalData.projects
 function search(garbage,s){
   let ans = []
   if (!s) return []
@@ -40,46 +40,34 @@ function normal(anses) {
 }
 Page({
   onLoad:function(){
-    this.setData({preset:getApp().globalData.userInfo})
+    this.setData({preset:getApp().globalData.preset})
     this.dos(this.data.preset)
   },
   data: {
     icons:getApp().globalData.icons,
     count:0,
-    preset:"globale",
-    ans:[{name:"纸张",type:"干垃圾"}]
+    preset:"",
+    // ans:[{name:"p1",type:"r1"}]
+    ans:[],
   },
-  t1: function (e) {
-    wx.navigateTo({
-      url: '../detail/detail?type=1',
-    })
+  t: function (e) {
+  //  console.log(e.currentTarget.dataset.id)
+   var id = e.currentTarget.dataset.id
+   getApp().globalData.currentProject = getApp().globalData.projects[id]
+   wx.navigateTo({url: '../detail/detail',})
   },
-  t2: function (e) { 
-    wx.navigateTo({
-      url: '../detail/detail?type=2',
-    })
-  },
-  t3: function (e) { 
-    wx.navigateTo({
-      url: '../detail/detail?type=3',
-    })
-  },
-  t4: function (e) {
-    wx.navigateTo({
-      url: '../detail/detail?type=4',
-    })
-   },
+  
   dosearch:function(e){
     var s = e.detail.value
     this.dos(s)
   },
   dos:function(s){
-    let anses = []
-    for (var i = 0; i < 4; i++) {
-      let ans = search(garbage[i], s)
-      anses.push(ans)
-    }
-    // this.setData({ value: ans.join(',') })
-    this.setData({ ans: normal(anses) })
+    // let anses = []
+    // for (var i = 0; i < 4; i++) {
+    //   let ans = search(garbage[i], s)
+    //   anses.push(ans)
+    // }
+    // this.setData({ ans: normal(anses) })
+    this.setData({ ans: getApp().globalData.projects })
   }
 })

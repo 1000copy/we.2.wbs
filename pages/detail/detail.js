@@ -1,6 +1,12 @@
 // pages/detail/detail.js
 Page({
-
+  t: function (e) {
+    //  console.log(e.currentTarget.dataset.id)
+     var id = e.currentTarget.dataset.id
+     var currentProject = getApp().globalData.currentProject
+     getApp().globalData.currentWork = currentProject.works[id]
+     wx.navigateTo({url: '../item/item',})
+    },
   /**
    * 页面的初始数据
    */
@@ -15,12 +21,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var type = +options.type - 1
-    // this.setData({ type: type})
-    this.setData({ icon: getApp().globalData.icons[type] })
-    this.setData({ title: getApp().globalData.typestr.split(' ')[type]})
-    this.setData({ remark: getApp().globalData.remark[type] })
-    this.setData({ list: getApp().globalData.garbage[type].split(' ') })
+    var currentProject = getApp().globalData.currentProject
+    this.setData({ name: currentProject.n})
+    this.setData({ list: currentProject.works})
   },
 
   /**

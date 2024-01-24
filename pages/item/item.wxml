@@ -1,0 +1,12 @@
+<!--pages/item/item.wxml-->
+<text>pages/item/item.wxml</text>
+
+<view class="icons">
+      <text class="remark">{{item.n}}</text>
+  </view>
+
+  <view class="row {{index%2==0?'j':'o'}}" wx:for="{{items}}" wx:key="name" 
+    bindtap='t' data-id='{{index}}'>
+        <span class="name ">{{item.n}}</span>
+        <span class="remark">{{item.r}}</span>
+    </view>
