@@ -10,3 +10,4 @@
         <span class="name ">{{item.n}}</span>
         <span class="remark">{{item.r}}</span>
     </view>
+    <button bindtap='additem'>Add Item</button>

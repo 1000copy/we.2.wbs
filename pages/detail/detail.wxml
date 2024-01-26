@@ -8,4 +8,5 @@
         <span class="name ">{{item.n}}</span>
         <span class="remark">{{item.r}}</span>
     </view>
+    <button bindtap='addwork'>Add Work</button>
 </view>

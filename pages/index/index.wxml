@@ -1,12 +1,10 @@
 <!--index.wxml-->
 <view class="container">
-    <input class="search" bindinput='dosearch' type="search" placeholder="工程名称" auto-focus value="{{preset}}"/>
+    <button bindtap='addproject'>Add Project</button>
     <view class="row {{index%2==0?'j':'o'}}" wx:for="{{ans}}" wx:key="name" 
-    bindtap='t' data-id='{{index}}'>
-        <span class="name ">{{item.n}}</span>
+    >
+        <span class="name " bindtap='t' data-id='{{index}}'>{{item.n}}</span>
         <span class="remark">{{item.r}}</span>
-    </view>
-    <view class="icons">
-      <image wx:for = "{{icons}}" src="../../image/{{item}}.png" mode="aspectFit" bindtap='t{{index+1}}'/>
+        <span class="remark" data-id='{{index}}' bindtap='remove' >del</span>
     </view>
 </view>
