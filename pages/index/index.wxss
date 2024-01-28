@@ -7,6 +7,10 @@
  color: #ecf0f1;
  background: #f1c4f0; 
 }
+.control{
+    display: flex;
+    flex-direction: row;
+}
 input{
   height: 30px;
   font-size: 27px;

@@ -1,10 +1,12 @@
 <!--index.wxml-->
 <view class="container">
-    <button bindtap='addproject'>Add Project</button>
+<view class="control">   
+  <input type="text" placeholder="project" value="{{inputValue}}" bindinput = "inputChange"></input>
+<button bindtap='addproject'>Add</button>
+<button bindtap='reset'>Reset</button></view>
     <view class="row {{index%2==0?'j':'o'}}" wx:for="{{ans}}" wx:key="name" 
     >
         <span class="name " bindtap='t' data-id='{{index}}'>{{item.n}}</span>
-        <span class="remark">{{item.r}}</span>
-        <span class="remark" data-id='{{index}}' bindtap='remove' >del</span>
+        <button data-id='{{index}}' bindtap='remove' >del</button>
     </view>
 </view>
